@@ -1,0 +1,249 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+}
+
+/* Header Section */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.website-title {
+    margin: 0;
+    font-size: 2.5em; /* Adjusted font size */
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+}
+
+.search-box input[type="text"] {
+    padding: 0.8em;
+    border: none;
+    border-radius: 5px;
+    margin-right: 0.5em;
+    font-size: 1em;
+}
+
+.search-box button {
+    padding: 0.8em 1.2em;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.search-box button:hover {
+    background-color: #0056b3;
+}
+
+/* Main Section */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Banner Section */
+.banner {
+    margin-bottom: 30px;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block; /* Removes extra space below image */
+}
+
+/* Welcome Section */
+.welcome-section {
+    background-color: #fff;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.welcome-section h2 {
+    color: #007bff;
+    font-size: 2.2em;
+    margin-bottom: 15px;
+}
+
+.welcome-section p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Image Gallery */
+.image-gallery {
+    display: grid; /* Using CSS Grid for responsive layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Equal-width sections, responsive */
+    gap: 20px; /* Spacing between items */
+    margin-bottom: 30px;
+}
+
+.gallery-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: relative; /* For caption positioning */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px; /* Fixed height for thumbnails */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    display: block;
+    opacity: 0.9; /* Apply opacity */
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover img {
+    opacity: 1; /* Hover effect */
+}
+
+.gallery-item .caption {
+    position: absolute;
+    bottom: 0; /* Position at the bottom */
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+/* Content Sections */
+.content-section {
+    display: flex; /* Using Flex for side-by-side content */
+    align-items: center;
+    margin-bottom: 40px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.content-section.left-aligned {
+    flex-direction: row; /* Image on left, text on right */
+}
+
+.content-section.right-aligned {
+    flex-direction: row-reverse; /* Image on right, text on left */
+}
+
+.content-image {
+    flex: 1; /* Takes up equal space with text */
+    padding: 20px;
+    text-align: center;
+}
+
+.content-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.content-text {
+    flex: 1; /* Takes up equal space with image */
+    padding: 20px;
+}
+
+.content-text h3 {
+    color: #007bff;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.content-text p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 2em;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .search-box {
+        margin-top: 15px;
+    }
+
+    .website-title {
+        font-size: 2em;
+    }
+
+    .content-section {
+        flex-direction: column; /* Stack image and text vertically on smaller screens */
+        text-align: center;
+    }
+
+    .content-section.right-aligned .content-image {
+        order: -1; /* Place image above text for right-aligned sections on small screens */
+    }
+
+    .content-image, .content-text {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-section h2 {
+        font-size: 1.8em;
+    }
+
+    .welcome-section p, .content-text p {
+        font-size: 1em;
+    }
+
+    .search-box input[type="text"], .search-box button {
+        padding: 0.6em;
+        font-size: 0.9em;
+    }
+}
